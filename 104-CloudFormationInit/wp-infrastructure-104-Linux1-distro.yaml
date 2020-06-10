@@ -82,8 +82,6 @@ Resources:
           !Sub |
             #!/bin/bash
             yum update -y aws-cfn-bootstrap # good practice - always do this.
-            yum remove httpd-tools
-            yum remove httpd
             /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource EC2 --configsets wordpress --region ${AWS::Region}
             yum -y update
     Metadata:
